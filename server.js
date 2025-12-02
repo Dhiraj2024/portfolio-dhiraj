@@ -47,6 +47,15 @@ app.get('/requests', (req, res) => {
   res.render('requests');
 });
 
+// Projects and Education pages
+app.get('/projects', (req, res) => {
+  res.render('projects');
+});
+
+app.get('/education', (req, res) => {
+  res.render('education');
+});
+
 // Fallback for non-existent routes
 app.use((req, res) => {
   // For API routes, do not render here
