@@ -138,8 +138,22 @@
 
       async function loadRequests() {
         try {
-          const res = await fetch("/api/messages");
+          const adminKey = prompt("Enter admin key to view messages:");
+          if (!adminKey) {
+            document.getElementById("requests-content").innerHTML =
+              '<div class="empty-state"><p>Admin key required.</p></div>';
+            return;
+          }
+
+          const res = await fetch("/api/messages?key=" + encodeURIComponent(adminKey));
           const data = await res.json();
+          
+          if (!res.ok) {
+            document.getElementById("requests-content").innerHTML =
+              '<div class="empty-state"><p>Unauthorized. Invalid admin key.</p></div>';
+            return;
+          }
+
           const messages = data.messages || [];
           const container = document.getElementById("requests-content");
 
