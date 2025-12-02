@@ -1,44 +1,29 @@
-# portfolio3 — Express backend for contact form
+# Dhiraj's Portfolio
 
-This folder adds a simple Node + Express backend so visitors can contact you from the portfolio site. Messages are saved to MongoDB when `MONGODB_URI` is provided; otherwise they are stored in `messages.json`.
+A modern portfolio website with a **Node.js + Express backend** for contact form submissions.
 
-Setup
+## Features
+- **Frontend**: Responsive portfolio site with smooth animations, sections for skills, experience, projects, education, and services
+- **Backend**: REST API to handle contact form submissions and store messages
+- **Storage**: Messages saved to MongoDB (with file fallback to `messages.json`)
+- **Admin Panel**: View all submitted contact messages at `/requests`
 
-1. Install dependencies:
+## Quick Start
 
-```cmd
-cd d:\Allfiles\portfolio\portfolio3
-npm install
-```
+1. Install dependencies: `npm install`
+2. Create `.env` file with `PORT=3000`, `MONGODB_URI` (optional), and `ADMIN_KEY`
+3. Run: `npm start` (or `npm run dev` for development)
+4. Open: http://localhost:3000
 
-2. Create a `.env` file (or set env vars). You can copy `.env.example`:
+## Pages
+- `/` — Home (hero, skills, experience, projects, services)
+- `/projects` — Projects gallery
+- `/education` — Education details
+- `/contact` — Contact form
+- `/requests` — Admin dashboard for messages
 
-```
-PORT=3000
-MONGODB_URI=your_mongo_uri_here
-ADMIN_KEY=some-secret-key
-```
+## API
+- `POST /api/contact` — Submit contact form
+- `GET /api/messages?key=admin-key` — View messages
 
-Run
-
-```cmd
-npm start
-```
-
-API
-
-- POST `/api/contact` — accept JSON body: `{ name, email, message }`.
-  - Returns `201` and `{ success: true, source: 'mongodb' }` when saved to MongoDB, or `source: 'file'` when saved to `messages.json`.
-- GET `/api/messages?key=YOUR_ADMIN_KEY` — returns saved messages (protected if `ADMIN_KEY` is set).
-
-Example curl
-
-```cmd
-curl -X POST http://localhost:3000/api/contact -H "Content-Type: application/json" -d "{\"name\":\"John\",\"email\":\"john@example.com\",\"message\":\"Hello!\"}"
-
-curl http://localhost:3000/api/messages?key=some-secret-key
-```
-
-Integrating with your front-end
-
-From the portfolio front-end you can `fetch('/api/contact', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({...}) })`.
+Deploy on Render.com, Railway, or Heroku. Set `MONGODB_URI` in environment variables for cloud persistence.
