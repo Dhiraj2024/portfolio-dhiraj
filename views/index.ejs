@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio — Beyond The Interface</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles (served from /public/css) -->
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <!-- Decorative floating shapes -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <!-- Navbar -->
+    <header class="header">
+      <nav class="nav glass">
+        <a href="#" class="logo">Dhiraj<span class="accent">.</span></a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#skills">Skills</a></li>
+          <li><a href="/#experience">Experience</a></li>
+          <li><a href="/#projects">Projects</a></li>
+          <li><a href="/#education">Education</a></li>
+          <li><a href="/#certifications">Certifications</a></li>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/requests">Requests</a></li>
+          <li>
+            <a href="/contact" class="btn btn-pill btn-primary small"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Home / Hero -->
+      <section id="home" class="section hero fade-in">
+        <div class="container hero-grid">
+          <div class="hero-text">
+            <h1>Beyond The Interface</h1>
+            <h2>Crafting unforgettable digital experiences.</h2>
+            <p>
+              I design and build meaningful user experiences as a UI/UX
+              Designer, Full-Stack Developer, and Creative Visual Designer.
+            </p>
+            <div class="actions">
+              <a href="#projects" class="btn btn-pill btn-primary">My Work</a>
+              <a
+                href="https://drive.google.com/my-resume"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-pill btn-ghost"
+                >Download Resume</a
+              >
+            </div>
+          </div>
+          <div class="hero-image skeleton">
+            <div class="avatar-wrap">
+              <img src="/assets/myimg.jpg" alt="Profile photo" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- (Remaining content is the same as your original index.html) -->
+
+      <!-- Contact -->
+      <section id="contact" class="section fade-in">
+        <div class="container">
+          <div class="section-head">
+            <h3>Contact</h3>
+            <p class="muted">Let’s build something meaningful together.</p>
+          </div>
+
+          <div class="contact-grid">
+            <form id="contact-form" class="card form">
+              <div class="form-row">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                />
+                <small class="error" data-error-for="name"></small>
+              </div>
+              <div class="form-row">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  required
+                />
+                <small class="error" data-error-for="email"></small>
+              </div>
+              <div class="form-row">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Tell me about your project"
+                  required
+                ></textarea>
+                <small class="error" data-error-for="message"></small>
+              </div>
+              <button type="submit" class="btn btn-pill btn-primary">
+                Submit
+              </button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+            </form>
+
+            <div class="card contact-info">
+              <div class="info-row">
+                <span class="info-label">Email</span>
+                <a href="mailto:hello@example.com" class="info-value"
+                  >hello@example.com</a
+                >
+              </div>
+              <div class="info-row">
+                <span class="info-label">Phone</span>
+                <a href="tel:+910000000000" class="info-value"
+                  >+91 00000 00000</a
+                >
+              </div>
+              <div class="info-row">
+                <span class="info-label">Location</span>
+                <span class="info-value">Ranchi, Jharkhand, India</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p class="muted">
+          © <span id="year"></span> Dhiraj Kumar. Crafted with care.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scripts (served from /public/js) -->
+    <script src="/js/index.js"></script>
+  </body>
+</html>

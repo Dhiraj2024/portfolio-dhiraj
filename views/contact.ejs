@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact — Beyond The Interface</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/index.css" />
+    <style>
+      .contact-page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 60px 20px;
+      }
+      .contact-container {
+        max-width: 600px;
+        margin: 0 auto;
+        width: 100%;
+      }
+      .back-link {
+        display: inline-block;
+        margin-bottom: 20px;
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .back-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Decorative floating shapes -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <!-- Navbar -->
+    <header class="header">
+      <nav class="nav glass">
+        <a href="/" class="logo">Dhiraj<span class="accent">.</span></a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#skills">Skills</a></li>
+          <li><a href="/#experience">Experience</a></li>
+          <li><a href="/#projects">Projects</a></li>
+          <li><a href="/#education">Education</a></li>
+          <li><a href="/#certifications">Certifications</a></li>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/requests">Requests</a></li>
+          <li>
+            <a href="/contact" class="btn btn-pill btn-primary small"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="contact-page">
+        <div class="contact-container">
+          <a href="/" class="back-link">← Back to Home</a>
+          <div class="section-head">
+            <h3>Get In Touch</h3>
+            <p class="muted">
+              Let's build something meaningful together. Send me a message!
+            </p>
+          </div>
+
+          <form id="contact-form" class="card form" style="padding: 30px">
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                required
+              />
+              <small class="error" data-error-for="name"></small>
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
+              <small class="error" data-error-for="email"></small>
+            </div>
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Tell me about your project"
+                required
+              ></textarea>
+              <small class="error" data-error-for="message"></small>
+            </div>
+            <button type="submit" class="btn btn-pill btn-primary">
+              Send Message
+            </button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p class="muted">
+          © <span id="year"></span> Dhiraj Kumar. Crafted with care.
+        </p>
+      </div>
+    </footer>
+
+    <script src="/js/index.js"></script>
+  </body>
+</html>
